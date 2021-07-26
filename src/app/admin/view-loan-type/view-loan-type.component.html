@@ -1,0 +1,28 @@
+<h1  style="font-family: 'Times New Roman', Times, serif">Available Loan Types</h1>
+    <table class="table" border="0px">
+        <tbody >
+            <tr style="font-size: 15px;">
+              <th>Id</th>
+              &nbsp;
+              <td>Loan Title</td>
+              &nbsp;
+              <td>Loan details</td>
+              &nbsp;
+              <td>Delete</td>
+            </tr>   
+            &nbsp;
+            <tr *ngFor="let loan of allLoan">
+                <td>{{loan.id}}</td>
+                &nbsp;
+                <td>{{loan.loanTitle}}</td>
+                &nbsp;
+                <td>{{loan.loanDetail}}</td>
+                &nbsp;
+                <td><button mat-raised-button color="accent" type="submit" (click)=delete(loan.id)>Delete</button></td>
+            </tr>
+          </tbody>
+      
+        </table>
+
+        <button mat-raised-button color="accent" type="submit" [routerLink]="['/header/admin/loantype']">Add New Loan Type</button>
+

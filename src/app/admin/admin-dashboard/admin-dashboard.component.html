@@ -1,0 +1,24 @@
+
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="container">
+          <mat-card>
+            <div class="list-group">
+              <button mat-raised-button type="button" color="accent" routerLink="/admin">Admin</button>
+              <button type="button" class="list-group-item list-group-item-action"  routerLink="view-loan-type"> Loan Type</button>
+              <button type="button" class="list-group-item list-group-item-action"  routerLink="view-electronic-item">Electronics Items</button>
+               <button type="button" class="list-group-item list-group-item-action"  routerLink="view-applicant">Applicant</button>
+            </div>
+          </mat-card> 
+        </div>
+      </div>
+      <div class="col-md-9 container-fluid">
+        <mat-card>
+          <router-outlet></router-outlet>
+        </mat-card>
+      </div>
+    </div>
+</div>
+
+

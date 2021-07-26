@@ -1,0 +1,76 @@
+
+<mat-toolbar color="accent" class="app-header">
+  <div><a href="https://www.positronx.io" target="_blank" class="positronx">Lakshmi Finance</a></div>
+  <span class="nav-tool-items">
+     <a mat-raised-button routerLink="/login" routerLinkActive="active">Login</a> &nbsp;  &nbsp;
+  </span>
+</mat-toolbar>   <br> <br>
+<div class="login-wrapper" fxLayout="row"  fxLayoutAlign="center center" style="margin-top:0%;">
+  <mat-card  class="box" > 
+   <mat-card-header>
+     <mat-card-title>Register</mat-card-title>
+  </mat-card-header>
+ 
+     <form class="example-form"  [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <mat-card-content >
+       <div formGroupName="person">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="First Name"  formControlName="firstname">
+              </mat-form-field> 
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Last Name"  formControlName="lastname">
+              </mat-form-field> <br>
+              <mat-radio-group  formControlName="gender"  class="example-full-width" > 
+                <mat-label >Gender &nbsp;: &nbsp;</mat-label>
+                <mat-radio-button  value="Male">Male</mat-radio-button>  &nbsp;
+                <mat-radio-button value="female">Female</mat-radio-button>  &nbsp; 
+              </mat-radio-group> <br>
+              <mat-form-field class="example-full-width">
+                <input matInput type="date"  placeholder="DOB"  formControlName="dob">
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Email"  formControlName="email">
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Mobile No."  formControlName="mobile">
+              </mat-form-field>
+             <div formGroupName="address">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Address Line 1"  formControlName="addressLine1">
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="City"  formControlName="city">
+              </mat-form-field> 
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="District"  formControlName="district">
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="State"  formControlName="state">
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Postal Code"  formControlName="postalCode">
+              </mat-form-field>
+             
+             </div>
+            </div>
+            <div>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Aadhar No."  formControlName="aadhar">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Pan No."  formControlName="pan">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Username" formControlName="username">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Password" formControlName="password">
+        </mat-form-field>
+      </div>
+      </mat-card-content>
+   
+    <button mat-stroked-button color="accent" class="btn-block">Register</button>
+  </form>
+</mat-card>
+
+</div>

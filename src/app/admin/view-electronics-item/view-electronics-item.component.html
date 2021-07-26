@@ -1,0 +1,30 @@
+
+
+<h1  style="font-family: 'Times New Roman', Times, serif">Available Electronics Item</h1>
+    <table class="table" border="0px">
+        <tbody >
+            <tr style="font-size: 15px;">
+                    <th>Id</th>
+                    <td>Product Name</td>
+                    <td>Company</td>
+                    <td>Serial Id</td>
+                    <td>Price</td>
+                    <td>Delete</td>
+                  
+            </tr>   
+            &nbsp;
+            <tr *ngFor="let item of allItems">
+                <td>{{item.id}}</td>
+                <td>{{item.productName}}</td>
+                <td>{{item.company}}</td>
+                <td>{{item.serialId}}</td>
+                <td>{{item.price}}</td>
+                <td><button mat-raised-button color="accent" type="submit" (click)=delete(item.id)>Delete</button></td>
+            </tr>
+          </tbody>
+      
+        </table>
+
+        <button mat-raised-button color="accent" type="submit" [routerLink]="['/header/admin/electronicsItem']">Add New Item</button>
+
+

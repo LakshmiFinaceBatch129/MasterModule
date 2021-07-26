@@ -1,0 +1,82 @@
+<h1>Loan Application Form</h1>
+<div>
+    <form [formGroup]="loanForm" (ngSubmit)="onSubmit()">
+        <div formGroupName="applicant"  style="float: left;">
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Select Applicant Id</mat-label>
+                    <mat-select formControlName="id">
+                            <mat-option *ngFor="let app of applicant"   [value]="app.id">
+                                {{app.id}}
+                            </mat-option>
+                    </mat-select>
+            </mat-form-field> &nbsp;
+        </div>
+            <div formGroupName="loanType" style="float: left;">
+                <mat-form-field appearance="outline" class="example-full-width">
+                    <mat-label>Select Loan Type</mat-label>
+                        <mat-select formControlName="id">
+                                <mat-option *ngFor="let loan of allLoan"   [value]="loan.id">
+                                    {{loan.loanTitle}}
+                                </mat-option>
+                        </mat-select>
+                </mat-form-field> &nbsp;
+            </div>
+               
+        <div formGroupName="electronicsItem"  >
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Select Electronic Item</mat-label>
+                    <mat-select formControlName="id">
+                        <mat-option *ngFor="let item of allItems"  [value]="item.id">
+                             {{item.productName}}
+                        </mat-option>
+                    </mat-select>
+            </mat-form-field>
+        </div>
+                             
+    <h3>Banking Details </h3>
+        <div formGroupName="bankDetails">
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Bank Name </mat-label>
+                <input matInput type="text" formControlName="bankName" required>
+            </mat-form-field> &nbsp;
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Branch Name </mat-label>
+                <input matInput type="text" formControlName="branchName" required >
+            </mat-form-field> &nbsp;
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Ifsc Code </mat-label>
+                <input matInput type="text" formControlName="ifscNo" required >
+            </mat-form-field> &nbsp;
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Account Type </mat-label>
+                <input matInput type="text" formControlName="accountType" required >
+            </mat-form-field> &nbsp;
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Account No </mat-label>
+                <input matInput type="text" formControlName="accountNo" required >
+            </mat-form-field> &nbsp;
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Average Credit Balance </mat-label>
+                <input matInput type="text" formControlName="averageCreditBalance" required >
+            </mat-form-field>
+        </div>
+        <h3 >Income  Details </h3>
+            <div formGroupName="incomeStatement">
+                <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Gross Salary  </mat-label>
+                <input matInput type="text" formControlName="grossSalary" required>
+                </mat-form-field>       &nbsp;                      
+                <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label> Net Salary </mat-label>
+                <input matInput type="text" formControlName="netSalary" required >
+                </mat-form-field>
+            </div>
+    
+    <button type="submit" mat-raised-button color="accent">
+     <span>Apply Loan </span>
+    </button>
+</form>
+
+    </div>
+
+   

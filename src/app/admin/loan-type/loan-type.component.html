@@ -1,0 +1,16 @@
+<h1 style="font-family: 'Times New Roman', Times, serif">Add New Loan Type</h1>
+ <form  [formGroup]="loanType" (ngSubmit)='onSubmit()'>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Loan Type </mat-label>
+      <input matInput type="text" formControlName="loanTitle" required>
+  </mat-form-field>  <br> <br>
+  <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Loan Details </mat-label>
+      <input matInput type="text" formControlName="loanDetail" required >
+  </mat-form-field> <br> <br>
+  <button type="submit" mat-raised-button color="accent">
+    <span>Add Loan Type </span>
+   </button>
+</form>
+ 
+
