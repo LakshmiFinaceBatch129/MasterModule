@@ -1,0 +1,154 @@
+<div class="container">
+    <h1 class="text-center text-muted"> Loan Applicantion Form </h1>
+
+    <mat-card class="mt-5">
+
+        <div>
+
+
+            <form [formGroup]="loanForm" (ngSubmit)="onSubmit()">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div formGroupName="loanType">
+
+                            <mat-form-field appearance="outline" class="example-full-width">
+                                <mat-label>Select Loan Type</mat-label>
+                                <mat-select formControlName="id">
+                                    <mat-option *ngFor="let loanType of loanTypes"   [value]="loanType.id">
+                                        {{loanType.loanTitle}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div formGroupName="electronicItem">
+
+                            <mat-form-field appearance="outline" class="example-full-width">
+                                <mat-label>Select Electronic Item</mat-label>
+                                <mat-select formControlName="id">
+                                    <mat-option *ngFor="let electronicItem of electronicItems"  [value]="electronicItem.id">
+                                        {{electronicItem.productName}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+
+                        </div>
+                    </div>
+                </div>
+                <mat-divider></mat-divider>
+<h3 class="text-warning m-2">Banking Details </h3>
+                <div formGroupName="bankDetails">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label>Bank Name </mat-label>
+                                <input matInput type="text" formControlName="bankName" required>
+                            </mat-form-field>
+
+                        </div>
+                        <div class="col-md-6">
+
+                            <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label>Branch Name </mat-label>
+                                <input matInput type="text" formControlName="branchName" required >
+                            </mat-form-field>
+        
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label>Ifcs Code </mat-label>
+                                <input matInput type="text" formControlName="ifcsNo" required >
+                            </mat-form-field>
+
+                        </div>
+                        <div class="col-md-6">
+                            <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label>Account Type </mat-label>
+                                <input matInput type="text" formControlName="accountType" required >
+                            </mat-form-field>
+                            
+                        </div>
+                    </div>
+                  
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label>Account No </mat-label>
+                                <input matInput type="text" formControlName="accountNO" required >
+                            </mat-form-field>
+
+                        </div>
+                        <div class="col-md-6">
+                            <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label>Average Credit Balance </mat-label>
+                                <input matInput type="text" formControlName="averageCreditBalance" required >
+                            </mat-form-field>
+                            
+                        </div>
+                    </div>
+
+
+                   
+                </div>
+
+                <mat-divider></mat-divider>
+                <h3 class="text-warning m-2">Income  Details </h3>
+                                <div formGroupName="incomeStatement">
+                
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width" appearance="outline">
+                                                <mat-label>Gross Salary  </mat-label>
+                                                <input matInput type="text" formControlName="grossSalary" required>
+                                            </mat-form-field>
+                
+                                        </div>
+                                        <div class="col-md-6">
+                
+                                            <mat-form-field class="example-full-width" appearance="outline">
+                                                <mat-label> Net Salary </mat-label>
+                                                <input matInput type="text" formControlName="Netsalary" required >
+                                            </mat-form-field>
+                        
+                
+                                        </div>
+                                    </div>
+                
+                                   
+                                  
+                
+                                   
+                
+                                   
+                                </div>
+                
+
+
+
+
+                <button type="submit" mat-raised-button color="primary" class="btn  btn-block m-2 ">
+                    <span>Apply Loan </span>
+                </button>
+
+            </form>
+
+
+
+
+        </div>
+
+    </mat-card>
+
+
+</div>

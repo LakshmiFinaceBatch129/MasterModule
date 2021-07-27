@@ -1,0 +1,35 @@
+<div>
+  <div class="row">
+<div class="col-md-3">
+  <div class="container-fluid">
+      <mat-card>
+      
+          <div class="list-group">
+              <button type="button" class="list-group-item list-group-item-action active" routerLink="/credit-manager">
+                  Applicant
+              </button>
+              <button type="button" class="list-group-item list-group-item-action" routerLink="all-files">All Files
+              </button>
+             
+              <button type="button" class="list-group-item list-group-item-action" routerLink="approved">Approved Files
+              </button>
+
+              <button type="button" class="list-group-item list-group-item-action" routerLink="rejected">Rejected Files
+              </button>
+             
+
+            </div>
+      
+      
+       </mat-card>
+         
+      </div>
+
+
+</div>
+<div class="col-md-9">
+  <router-outlet></router-outlet>
+</div>
+
+  </div>
+</div>
