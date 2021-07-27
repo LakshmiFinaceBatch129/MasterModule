@@ -1,0 +1,87 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" routerLink="/home">Lakshmi Finance</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/login">login </a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" routerLink="/register">Register </a>
+          </li>
+       
+      </ul>
+    
+    </div>
+  </nav>
+
+<div class="container-fluid login">
+   
+
+<div class="row">
+
+    <div class="col-md-6 offset-md-3">
+        <mat-card class="mt-10">
+
+            <div class="container text-center">
+
+
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+
+
+
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Username </mat-label>
+                        <input matInput type="text" formControlName="username" required name="username">
+
+                    </mat-form-field>
+
+                    <div *ngIf="loginForm.get('username').invalid && (loginForm.get('username').dirty || loginForm.get('username').touched)">
+            
+                    <p class="text-danger" *ngIf="loginForm.get('username').errors.required">
+                        username is required.
+                    </p>
+            
+            
+                </div>
+
+
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput type="password" required formControlName="password" name="password">
+                    </mat-form-field>
+
+                    <div *ngIf="loginForm.get('password').invalid && (loginForm.get('password').dirty || loginForm.get('password').touched)">
+
+                        <p class="text-danger" *ngIf="loginForm.get('password').errors.required">
+                            password is required.
+                        </p>
+
+                    </div>
+
+
+                    <button type="submit" mat-raised-button color="primary" class="btn  btn-block m-2 ">
+                        <span>Log In</span>
+                    </button>
+
+                </form>
+
+
+
+
+            </div>
+            <mat-divider>
+            </mat-divider>
+
+            <button routerLink="/register" class="btn btn-success  btn-block mt-3">
+                Create New Account
+            </button>
+
+        </mat-card>
+    </div>
+</div>
+</div>

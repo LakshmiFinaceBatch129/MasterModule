@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-md-3">
+
+        <mat-card>
+
+            <div class="list-group">
+                <button type="button" class="list-group-item list-group-item-action active" routerLink="/operation">
+                    Operations
+                </button>
+                <button type="button" class="list-group-item list-group-item-action" routerLink="ops-files">Ops All Files
+                </button>
+
+                <button type="button" class="list-group-item list-group-item-action" routerLink="credit-approved">Credit Approved Files
+                </button>
+
+                <button type="button" class="list-group-item list-group-item-action" routerLink="credit-rejected">Credit Rejected Files
+                </button>
+
+            </div>
+
+
+        </mat-card>
+
+
+
+    </div>
+
+
+    <div class="col-md-9">
+
+
+
+        <router-outlet></router-outlet>
+
+
+    </div>
+</div>
